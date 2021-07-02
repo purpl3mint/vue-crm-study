@@ -68,7 +68,7 @@ export default {
     title: "",
     limit: 100,
     current: null,
-    //select: null
+    select: null
   }),
   validations: {
     title: { required },
