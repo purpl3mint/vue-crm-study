@@ -73,13 +73,13 @@ export default {
           limit: this.limit,
         });
 
-        this.title = ''
-        this.limit = 100
-        this.$v.reset()
-        this.$message('Категория была создана')
-        this.$emit('created', category)
+        this.title = "";
+        this.limit = 100;
+        this.$v.reset();
+        this.$message("Категория была создана");
+        this.$emit("created", category);
       } catch (e) {
-        console.log(1);
+        console.log('');
         throw e;
       }
     },
