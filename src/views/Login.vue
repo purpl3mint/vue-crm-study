@@ -1,7 +1,7 @@
 <template>
   <form class="card auth-card" @submit.prevent="submitHandler">
     <div class="card-content">
-      <span class="card-title">Домашняя бухгалтерия</span>
+      <span class="card-title">{{'App_Title' | localize}}</span>
       <div class="input-field">
         <input
             id="email"
@@ -9,15 +9,15 @@
             v-model.trim="email"
             :class="{invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email)}"
         >
-        <label for="email">Email</label>
+        <label for="email">{{'Login_Email' | localize}}</label>
         <small 
           class="helper-text invalid"
           v-if="$v.email.$dirty && !$v.email.required"
-        >Поле Email не должно быть пустым</small>
+        >{{'Login_Email_Empty' | localize}}</small>
         <small 
           class="helper-text invalid"
           v-else-if="$v.email.$dirty && !$v.email.email"
-        >Введите корректный Email</small>
+        >{{'Login_Email_Invalid' | localize}}</small>
       </div>
       <div class="input-field">
         <input
@@ -26,18 +26,18 @@
             v-model.trim="password"
             :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
         >
-        <label for="password">Пароль</label>
+        <label for="password">{{'Login_Password' | localize}}</label>
         <small 
           class="helper-text invalid"
           v-if="$v.password.$dirty && !$v.password.required"
         >
-          Введите пароль
+          {{'Login_Passwor_Empty' | localize}}
         </small>
         <small 
           class="helper-text invalid"
           v-else-if="$v.password.$dirty && !$v.password.minLength"
         >
-          Пароль должен быть не меньше {{$v.password.$params.minLength.min}} символов. Сейчас он из {{password.length}} символов
+          {{'Login_Password_Invalid_Pt1' | localize}} {{$v.password.$params.minLength.min}} {{'Login_Password_Invalid_Pt2' | localize}} {{password.length}} {{'Login_Password_Invalid_Pt3' | localize}}
         </small>
       </div>
     </div>
@@ -47,14 +47,14 @@
             class="btn waves-effect waves-light auth-submit"
             type="submit"
         >
-          Войти
+          {{'Login_Enter' | localize}}
           <i class="material-icons right">send</i>
         </button>
       </div>
 
       <p class="center">
-        Нет аккаунта?
-        <router-link to="/register">Зарегистрироваться</router-link>
+        {{'Login_No_Account' | localize}}
+        <router-link to="/register">{{'Login_To_Register' | localize}}</router-link>
       </p>
     </div>
   </form>
