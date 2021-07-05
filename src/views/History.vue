@@ -22,8 +22,8 @@
         v-model="page"
         :page-count="pageCount"
         :click-handler="pageChangeHandler"
-        :prev-text="'Назад'"
-        :next-text="'Вперед'"
+        :prev-text="'History_Back' | localize"
+        :next-text="'History_Forward' | localize"
         :container-class="'pagination'"
         :page-class="'waves-effect'"
       />
@@ -43,7 +43,7 @@ export default {
   mixins: [paginationMixin],
   data: () => ({
     loading: true,
-    records: [],
+    records: []
   }),
   async mounted() {
     this.records = await this.$store.dispatch("fetchRecords");

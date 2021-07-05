@@ -16,7 +16,7 @@
       <div v-for="cat of categories" :key="cat.id">
         <p>
           <strong>{{ cat.title }}:</strong>
-          {{ cat.spend | currency }} из {{ cat.limit | currency}}
+          {{ cat.spend | currency }} {{'Planning_Of' | localize}} {{ cat.limit | currency}}
         </p>
         <div class="progress" v-tooltip="cat.tooltip">
           <div

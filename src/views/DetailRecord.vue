@@ -4,9 +4,9 @@
 
     <div v-else-if="record">
       <div class="breadcrumb-wrap">
-        <router-link to="/history" class="breadcrumb">История</router-link>
+        <router-link to="/history" class="breadcrumb">{{'Detailed_History' | localize}}</router-link>
         <a @click.prevent class="breadcrumb">
-          {{record.type === 'income' ? 'Доход' : 'Расход'}}
+          {{record.type === 'income' ? 'Доход' : 'Расход' | localize}}
         </a>
       </div>
       <div class="row">
@@ -16,9 +16,9 @@
             'green' : record.type === 'income'
           }">
             <div class="card-content white-text">
-              <p>Описание: {{record.description}}</p>
-              <p>Сумма: {{record.amount | currency}}</p>
-              <p>Категория: {{record.categoryName}}</p>
+              <p>{{'Detailed_Description' | localize}}: {{record.description}}</p>
+              <p>{{'Detailed_Sum' | localize}}: {{record.amount | currency}}</p>
+              <p>{{'Detailed_Category' | localize}}: {{record.categoryName}}</p>
 
               <small>{{record.date | date('datetime')}}</small>
             </div>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <p class="center" v-else>Такой записи нет</p>
+    <p class="center" v-else>{{'Detailed_Error' | localize}}</p>
   </div>
 </template>
 

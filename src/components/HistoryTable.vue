@@ -19,7 +19,7 @@
         <td>{{ record.categoryName }}</td>
         <td>
           <span class="white-text badge" :class="[record.typeClass]">{{
-            record.typeText
+            record.typeText | localize
           }}</span>
         </td>
         <td>
