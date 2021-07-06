@@ -34,6 +34,11 @@
 <script>
 import Loader from '../components/app/Loader.vue'
 export default {
+  metaInfo() {
+    return {
+      title: this.$title('Detailed_Title')
+    }
+  },
   components: { Loader },
   name: 'detail',
   data: () => ({

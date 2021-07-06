@@ -38,6 +38,11 @@ import Loader from '@/components/app/Loader.vue';
 import {Pie} from 'vue-chartjs'
 
 export default {
+  metaInfo() {
+    return {
+      title: this.$title('History_Title')
+    }
+  },
   name: 'history',
   extends: Pie,
   mixins: [paginationMixin],

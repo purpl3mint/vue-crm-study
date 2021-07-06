@@ -27,6 +27,11 @@ import CategoryEdit from "@/components/CategoryEdit";
 import Loader from "../components/app/Loader.vue";
 
 export default {
+  metaInfo() {
+    return {
+      title: this.$title('Categories_Title')
+    }
+  },
   name: "categories",
   data: () => ({
     categories: [],
